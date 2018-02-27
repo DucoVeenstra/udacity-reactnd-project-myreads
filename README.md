@@ -3,12 +3,11 @@
 This project was bootstrapped with Create React App.
 ## Table of Contents
 
-- [Demo](#Demo)
-- [Getting Started](#Getting Started)
+- [Demo](#demo)
+- [Getting Started](#getting-started)
   - [npm start](#npm-start)
-- [Build With](#Build With)
-- [Authors](#Authors)
-- [License](#License)
+- [Build With](#build-with)
+- [Authors](#authors)
 
 ## Demo
 ### Project Specification
@@ -51,7 +50,3 @@ You will also see any lint errors in the console.
 ## Authors
 
 - Duco Veenstra
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
