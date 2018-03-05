@@ -47,7 +47,7 @@ class Book extends Component {
         </div>
         <div className="book-title">{book.title}</div>
         <div className="book-authors">{this.renderAuthors(book.authors)}</div>
-        <BookRating averageRating={book.averageRating} />
+        <BookRating value={book.ratingsCount ? book.ratingsCount : 0} count={5} />
       </div>
     )
   }
