@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import BookshelfChanger from './BookshelfChanger';
+import BookshelfChanger from './Bookshelf_Changer';
+import BookRating from './Book_Rating';
 
 class Book extends Component {
   static propTypes = {
-    title:PropTypes.string.isRequired,
-    authors:PropTypes.array,
-    thumbnailUrl:PropTypes.string //TODO: can be null search on B
+    book:PropTypes.object.isRequired
   }
 
   renderAuthors(authors) {
@@ -24,17 +23,31 @@ class Book extends Component {
     
     return text;
   }
-
+  
+  // Fix: When Searching on 'B' imageLinks is null on some books
+  getBookThumbnail(book) {
+    let urlThumbnail = "";
+    if (!book.imageLinks) { 
+    } else {
+      if (!book.imageLinks.thumbnail) {
+      }
+      else {
+        urlThumbnail = book.imageLinks.thumbnail
+      }
+    }
+    return urlThumbnail;
+  }
   render() {
-    const {title, authors, thumbnailUrl, onChangeBookshelf, book} = this.props;
+    const {onChangeBookshelf, book, bookshelf} = this.props;
     return (
       <div className="book">
         <div className="book-top">
-          <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url('${thumbnailUrl}')` }}></div>
-          <BookshelfChanger book={book} onChangeBookshelf={onChangeBookshelf} />
+          <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url('${this.getBookThumbnail(book)}')` }}></div>
+          <BookshelfChanger book={book} bookshelf={bookshelf} onChangeBookshelf={onChangeBookshelf} />
         </div>
-        <div className="book-title">{title}</div>
-        <div className="book-authors">{this.renderAuthors(authors)}</div>
+        <div className="book-title">{book.title}</div>
+        <div className="book-authors">{this.renderAuthors(book.authors)}</div>
+        <BookRating averageRating={book.averageRating} />
       </div>
     )
   }

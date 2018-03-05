@@ -13,11 +13,11 @@ class SearchPage extends Component {
 
   updateQuery = (query) => {
     this.setState({query: query.trim()})
-
-    BooksAPI.search(query.trim()).then((books) => {
-      this.setState({books: books});
-    })
-
+    if (query.length > 0) {
+      BooksAPI.search(query.trim()).then((books) => {
+        this.setState({books: books});
+      })
+    }
   }
 
   clearQuery = () => {
@@ -25,6 +25,7 @@ class SearchPage extends Component {
   }
 
   updateBookshelf = (book, shelf) => {
+    console.log(book, shelf);
     BooksAPI.update(book, shelf);
   }
 

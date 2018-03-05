@@ -10,7 +10,7 @@ class Bookshelf extends Component {
   }
 
   renderListitems(book, onChangeBookshelf) {
-    return <li key={book.id}><Book book={book} title={book.title} authors={book.authors} thumbnailUrl={book.imageLinks.thumbnail} onChangeBookshelf={onChangeBookshelf}/></li>
+    return <li key={book.id}><Book book={book} onChangeBookshelf={onChangeBookshelf}/></li>
   }
 
   render() {

@@ -24,24 +24,18 @@ class App extends Component {
   }
 
   updateBookshelf = (book, shelf) => {
-    this.setState((state) => ({
-      contacts: state.books.filter(c => c.id !== book.id)
-    }));
-
     BooksAPI.update(book, shelf);
   }
 
   render() {  
     return (
-      <div className="App">
-        
+      <div className="App">        
           <Route exact path="/" render={() => (
             <BookList 
               books={this.state.books} onChangeBookshelf={this.updateBookshelf} />
           )} />
 
-          <Route path="/search" render={() => (<SearchPage/>)} />
-        
+          <Route path="/search" render={() => (<SearchPage/>)} />        
       </div>
     );
   }
