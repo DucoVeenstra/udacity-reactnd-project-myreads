@@ -1,37 +1,51 @@
 # My Bookshelf
-"My Bookshelf" is a react application,for Udacity's React Nanodegree first project assignment, "MyReads". Users will be able to ... As extra feature ...
-This project was bootstrapped with Create React App.
+"My Bookshelf" is a react application,for Udacity's React Nanodegree first project assignment, "MyReads". Users will be able to search books via the provided api of udacity. These books can be added to tree provided bookshelfs '', '' and ''. As extra feature I added the star rating of each book that are registered. The second extra feature is a function to clear a bookshelf, in stead of delete each book from a shelf.
+
 ## Table of Contents
 
-- [Demo](#demo)
+- [Project](#demo)
 - [Getting Started](#getting-started)
   - [npm start](#npm-start)
+  - [git clone](#git-clone)
+  - [npm install](#npm-install)
+  - [npm build](npm-build)
+  - [npm start](npm-start)
 - [Build With](#build-with)
 - [Authors](#authors)
 
-## Demo
+## Project
 ### Project Specification
+Open [https://review.udacity.com/#!/rubrics/918/view](Project requirements 'Udacity').
 ### Extra added feature
+Beside the given requirements I added the following extra features:
+  1. Show Star-Rating of books
+  2. Clean bookshelf
 
 ## Getting Started
 - Get Project Repository
-- Install packages
-- [npm start](#npm-start)
+  - [git clone](#git-clone)
+- Install packages & Build app
+  - [npm install](#npm-install)
+  - [npm build](npm-build)
+- Start app
+  - [npm start](npm-start)
 
 ### `git clone`
-
+Gets the configuration,- and the project-files from github.<br>
 ```sh
 {
   git clone https://github.com/DucoVeenstra/udacity-reactnd-project-myreads.git
 }
 ```
 ### `npm install`
+Before executing this command make that you're in the project directory!<br>
 ```sh
 {
   npm install
 }
 ```
 ### `npm build`
+Make shure that the build is succes before running the app.
 ```sh
 {
   npm build
@@ -53,9 +67,15 @@ You will also see any lint errors in the console.
 ## Build With
 
 * This app was build with:
-  - react(http://www.dropwizard.io/1.0.2/docs/)
+  - react
+  - react-dom
   - react-router-dom
+  - react-scripts
+  - react-star-rating-component
   - prop-types
+
+* This app uses the following API:
+  - [https://reactnd-books-api.udacity.com](https://reactnd-books-api.udacity.com)
 
 ## Authors
 
