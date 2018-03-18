@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import Bookshelf from '../components/Bookshelf';
 import * as BooksAPI from '../api/BooksAPI';
@@ -12,18 +12,18 @@ class SearchPage extends Component {
   }
 
   updateQuery = (query) => {
-    this.setState({query: query})
+    this.setState({ query: query })
     if (query.length > 0) {
       BooksAPI.search(query.trim()).then((books) => {
-        this.setState({books: books});
+        this.setState({ books: books });
       })
     } else {
-      this.setState({books: []});
+      this.setState({ books: [] });
     }
   }
 
   clearQuery = () => {
-    this.setState({query: ''});
+    this.setState({ query: '' });
   }
 
   updateBookshelf = (book, shelf) => {
@@ -37,20 +37,20 @@ class SearchPage extends Component {
         <div className="search-books-bar">
           <Link className="close-search" to="/">Close</Link>
           <div className="search-books-input-wrapper">
-            <input 
-              type="text" 
-              placeholder="Search by title or author" 
+            <input
+              type="text"
+              placeholder="Search by title or author"
               value={this.state.query}
               onChange={(event) => this.updateQuery(event.target.value)} />
           </div>
         </div>
         {this.state.books && this.state.books.length > 0 ? (
           <div className="search-books-results">
-          <ol className="books-grid"></ol>
-          <Bookshelf title={"Search Result"} books={this.state.books} onChangeBookshelf={this.updateBookshelf} />
-        </div>
-        ) : (null)}        
-    </div>
+            <ol className="books-grid"></ol>
+            <Bookshelf title={"Search Result"} books={this.state.books} onChangeBookshelf={this.updateBookshelf} />
+          </div>
+        ) : (null)}
+      </div>
     )
   }
 }

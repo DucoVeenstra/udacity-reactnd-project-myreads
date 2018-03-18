@@ -1,13 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Book from './Book';
 
 class Bookshelf extends Component {
   static propTypes = {
-    title:PropTypes.string.isRequired,
-    books:PropTypes.array.isRequired//PropTypes.arrayOf(PropTypes.obj).isRequired
+    title: PropTypes.string.isRequired,
+    books: PropTypes.array.isRequired//PropTypes.arrayOf(PropTypes.obj).isRequired
   }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,23 +18,24 @@ class Bookshelf extends Component {
   }
 
   renderListitems(book, onChangeBookshelf) {
-    return <li key={book.id}><Book book={book} onChangeBookshelf={onChangeBookshelf}/></li>
+    return <li key={book.id}><Book book={book} onChangeBookshelf={onChangeBookshelf} /></li>
   }
+
   showBookShelfOptions() {
-    this.setState({showBookShelfOptions: true});
+    this.setState({ showBookShelfOptions: true });
   }
 
   renderBookShelfOptions(clearBookShelf, books) {
     return (
       <div className="bookshelf-actions" onClick={this.showBookShelfOptions}>
-        <ul className={this.state.showBookShelfOptions ? null : "hidden" }>
+        <ul className={this.state.showBookShelfOptions ? null : "hidden"}>
           <li onClick={() => clearBookShelf(books)}>Clear Shelf</li>
         </ul>
       </div>
     )
   }
   render() {
-    const {books, title, onChangeBookshelf, clearBookShelf} = this.props;
+    const { books, title, onChangeBookshelf, clearBookShelf } = this.props;
 
     return (
       <div className="bookshelf">

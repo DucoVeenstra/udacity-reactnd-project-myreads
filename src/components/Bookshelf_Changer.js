@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class BookshelfChanger extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: this.props.book.shelf};
+    this.state = { value: this.props.book.shelf };
     this.handleChange = this.handleChange.bind(this);
   }
 

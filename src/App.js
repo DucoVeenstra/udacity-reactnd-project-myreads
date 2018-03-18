@@ -27,8 +27,9 @@ class App extends Component {
     BooksAPI.update(book, shelf);
   }
 
-  clearBookShelf = (shelf) => {
-    shelf.map((book) => {
+  clearBookShelf = (booksOnShelf) => {
+    // Use foreach not map to clear warning: Expected to return a value in arrow function
+    booksOnShelf.forEach(book => {
       this.updateBookshelf(book, 'none');
     });
   }

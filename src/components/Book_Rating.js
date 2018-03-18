@@ -6,8 +6,8 @@ import StarRatingComponent from 'react-star-rating-component';
  * This object is used for type checking the props of the component.
  */
 const propTypes = {
-	value: PropTypes.number.isRequired,
-	count: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+  count: PropTypes.number.isRequired,
 };
 
 /**
@@ -18,26 +18,26 @@ const propTypes = {
  * @param {number} props.count - The total number of ratings.
  */
 function BookRating(props) {
-	return (
-		<div className="book-rating">
-			{/* The name props is the radio input value, it required but only is important if the editing is true, since
+  return (
+    <div className="book-rating">
+      {/* The name props is the radio input value, it required but only is important if the editing is true, since
 			the application will not allow this component to have editable value it will be set as a random value */}
-			<StarRatingComponent
-				name={Math.random().toString(36)}
-				className="book-rating-star"
-				starCount={5}
-				value={props.value}
-				editing={false}
-				starColor="#ffb400"
-				emptyStarColor="#ffb400"
-				renderStarIcon={(index, value) => {
-					return <span className={index <= value ? 'fa fa-star' : 'fa fa-star-o'}/>;
-				}}
-				renderStarIconHalf={() => <span className="fa fa-star-half-full"/>}
-			/>
-			<span className="book-rating-counter">({props.value})</span>
-		</div>
-	);
+      <StarRatingComponent
+        name={Math.random().toString(36)}
+        className="book-rating-star"
+        starCount={5}
+        value={props.value}
+        editing={false}
+        starColor="#ffb400"
+        emptyStarColor="#ffb400"
+        renderStarIcon={(index, value) => {
+          return <span className={index <= value ? 'fa fa-star' : 'fa fa-star-o'} />;
+        }}
+        renderStarIconHalf={() => <span className="fa fa-star-half-full" />}
+      />
+      <span className="book-rating-counter">({props.value})</span>
+    </div>
+  );
 }
 
 // Type checking the props of the component

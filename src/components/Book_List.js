@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Bookshelf from './Bookshelf';
 
@@ -10,8 +10,8 @@ class BookList extends Component {
   }
 
   render() {
-    const {books, onChangeBookshelf, clearBookShelf} = this.props;
-    
+    const { books, onChangeBookshelf, clearBookShelf } = this.props;
+
     return (
       <div className="list-books">
         <div className="list-books-title">
