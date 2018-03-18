@@ -10,7 +10,7 @@ class BookList extends Component {
   }
 
   render() {
-    const {books, onChangeBookshelf} = this.props;
+    const {books, onChangeBookshelf, clearBookShelf} = this.props;
     
     return (
       <div className="list-books">
@@ -18,9 +18,9 @@ class BookList extends Component {
           <h1>MyReads</h1>
         </div>
         <div className="list-books-content">
-          <Bookshelf title={"Currently Reading"} books={books.filter(book => book.shelf === "currentlyReading")} onChangeBookshelf={onChangeBookshelf} />
-          <Bookshelf title={"Want to Read"} books={books.filter(book => book.shelf === "wantToRead")} onChangeBookshelf={onChangeBookshelf} />
-          <Bookshelf title={"Read"} books={books.filter(book => book.shelf === "read")} onChangeBookshelf={onChangeBookshelf} />
+          <Bookshelf title={"Currently Reading"} books={books.filter(book => book.shelf === "currentlyReading")} onChangeBookshelf={onChangeBookshelf} clearBookShelf={clearBookShelf} />
+          <Bookshelf title={"Want to Read"} books={books.filter(book => book.shelf === "wantToRead")} onChangeBookshelf={onChangeBookshelf} clearBookShelf={clearBookShelf} />
+          <Bookshelf title={"Read"} books={books.filter(book => book.shelf === "read")} onChangeBookshelf={onChangeBookshelf} clearBookShelf={clearBookShelf} />
         </div>
         <div className="open-search">
           <Link to="/Search">Add a book</Link>

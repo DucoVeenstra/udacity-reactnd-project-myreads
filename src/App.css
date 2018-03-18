@@ -28,6 +28,7 @@ body, .app {
 
 .bookshelf {
   padding: 0 10px 20px;
+  position: relative;
 }
 
 @media (min-width: 600px) {
@@ -193,4 +194,44 @@ body, .app {
   line-height: normal;
   padding-top: 5px;
   /*color: #D46D00;*/
+}
+
+.bookshelf-actions {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+}
+
+.bookshelf-actions:after {
+  content: '\2807';
+  color: #dedede;
+  font-size: 30px;
+}
+
+.bookshelf-actions:hover {
+  cursor: pointer;
+}
+
+.bookshelf-actions ul {
+  position: absolute;
+  margin-left: -100px;
+  margin-top: 36px;
+  background-color: #899a8c;
+  list-style: none;
+  text-align: left;
+  padding: 10px 0 10px 0;
+  border: 1px solid #dedede;
+}
+
+.bookshelf-actions ul li:hover {
+  background: #2e7c31;
+  padding: 0 20px 0 20px;
+}
+
+.bookshelf-actions ul li {
+  padding: 0 20px 0 20px;
+}
+
+.hidden {
+  display: none;
 }
