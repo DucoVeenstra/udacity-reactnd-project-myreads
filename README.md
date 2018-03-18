@@ -8,8 +8,8 @@
   - [npm start](#npm-start)
   - [git clone](#git-clone)
   - [npm install](#npm-install)
-  - [npm build](npm-build)
-  - [npm start](npm-start)
+  - [npm build](#npm-build)
+  - [npm start](#npm-start)
 - [Build With](#build-with)
 - [Authors](#authors)
 
@@ -26,9 +26,9 @@ Beside the given requirements I added the following extra features:
   - [git clone](#git-clone)
 - Install packages & Build app
   - [npm install](#npm-install)
-  - [npm build](npm-build)
+  - [npm build](#npm-build)
 - Start app
-  - [npm start](npm-start)
+  - [npm start](#npm-start)
 
 ### `git clone`
 Gets the configuration,- and the project-files from github.<br>
