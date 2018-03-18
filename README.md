@@ -1,5 +1,5 @@
 # My Bookshelf
-"My Bookshelf" is a react application,for Udacity's React Nanodegree first project assignment, "MyReads". Users will be able to search books via the provided api of udacity. These books can be added to tree provided bookshelfs '', '' and ''. As extra feature I added the star rating of each book that are registered. The second extra feature is a function to clear a bookshelf, in stead of delete each book from a shelf.
+"My Bookshelf" is a react application,for Udacity's React Nanodegree first project assignment, "MyReads". Users will be able to search books via the provided api of udacity. These books can be added to three provided bookshelfs 'Currently Reading', 'Want to Read', 'Read' and 'None'. As extra feature I added the star-rating of each book that is registered. The second extra feature is a function to clear a bookshelf, in stead of delete each book from a shelf.
 
 ## Table of Contents
 
@@ -15,9 +15,9 @@
 
 ## Project
 ### Project Specification
-Open [https://review.udacity.com/#!/rubrics/918/view](Project requirements 'Udacity').
+Open [https://review.udacity.com/#!/rubrics/918/view](https://review.udacity.com/#!/rubrics/918/view)Project requirements 'Udacity'.
 ### Extra added feature
-Beside the given requirements I added the following extra features:
+Beside the given requirements I've added the following extra features:
   1. Show Star-Rating of books
   2. Clean bookshelf
 
@@ -38,14 +38,14 @@ Gets the configuration,- and the project-files from github.<br>
 }
 ```
 ### `npm install`
-Before executing this command make that you're in the project directory!<br>
+Before executing this command make sure that you're in the project directory.<br>
 ```sh
 {
   npm install
 }
 ```
 ### `npm build`
-Make shure that the build is succes before running the app.
+Make sure that the build command is succeeded before running the app.
 ```sh
 {
   npm build
