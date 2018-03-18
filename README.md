@@ -15,7 +15,7 @@
 
 ## Project
 ### Project Specification
-Open [https://review.udacity.com/#!/rubrics/918/view](https://review.udacity.com/#!/rubrics/918/view)Project requirements 'Udacity'.
+Open [Project Requirements of 'Udacity'](https://review.udacity.com/#!/rubrics/918/view).
 ### Extra added feature
 Beside the given requirements I've added the following extra features:
   1. Show Star-Rating of books
