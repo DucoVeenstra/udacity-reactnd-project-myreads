@@ -12,10 +12,18 @@ class SearchPage extends Component {
   }
 
   updateQuery = (query) => {
-    this.setState({ query: query })
+    const {booksOnHomePage} = this.props;
+    this.setState({ query: query });
     if (query.length > 0) {
-      BooksAPI.search(query.trim()).then((books) => {
-        this.setState({ books: books });
+      BooksAPI.search(query.trim()).then((booksInSearchResults) => {
+        booksInSearchResults.forEach(bookInSearchResults => {
+          booksOnHomePage.forEach(bookOnHomePage => {
+            if (bookInSearchResults.id === bookOnHomePage.id) {
+              bookInSearchResults.shelf = bookOnHomePage.shelf;
+            }
+          });
+        });
+        this.setState({ books: booksInSearchResults });
       })
     } else {
       this.setState({ books: [] });
@@ -24,11 +32,6 @@ class SearchPage extends Component {
 
   clearQuery = () => {
     this.setState({ query: '' });
-  }
-
-  updateBookshelf = (book, shelf) => {
-    console.log(book, shelf);
-    BooksAPI.update(book, shelf);
   }
 
   render() {
@@ -47,7 +50,7 @@ class SearchPage extends Component {
         {this.state.books && this.state.books.length > 0 ? (
           <div className="search-books-results">
             <ol className="books-grid"></ol>
-            <Bookshelf title={"Search Result"} books={this.state.books} onChangeBookshelf={this.updateBookshelf} />
+            <Bookshelf title={"Search Result"} books={this.state.books.filter(book => !book.shelf)} onChangeBookshelf={this.props.onChangeBookshelf} />
           </div>
         ) : (null)}
       </div>

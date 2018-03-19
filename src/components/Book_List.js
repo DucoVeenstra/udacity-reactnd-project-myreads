@@ -15,7 +15,7 @@ const BookList = ({books, onChangeBookshelf, clearBookShelf}) => {
           <Bookshelf title={"Read"} books={books.filter(book => book.shelf === "read")} onChangeBookshelf={onChangeBookshelf} clearBookShelf={clearBookShelf} />
         </div>
         <div className="open-search">
-          <Link to="/Search">Add a book</Link>
+          <Link to="/Search" booksOnHomePage={books}>Add a book</Link>
         </div>
       </div>
     )
