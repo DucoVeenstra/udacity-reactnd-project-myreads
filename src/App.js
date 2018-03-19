@@ -23,8 +23,9 @@ class App extends Component {
     books: []
   }
 
+  //You can avoid the use of this React lifecycle method chaining the request into the promise returned by BooksAPI.update() on line 27 in this way:
   updateBookshelf = (book, shelf) => {
-    BooksAPI.update(book, shelf);
+    BooksAPI.update(book,shelf).then(() => BooksAPI.getAll())
   }
 
   clearBookShelf = (booksOnShelf) => {

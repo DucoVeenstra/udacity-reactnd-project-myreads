@@ -1,17 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Bookshelf from './Bookshelf';
 
-class BookList extends Component {
-  static propTypes = {
-    books: PropTypes.array.isRequired
-  }
-
-  render() {
-    const { books, onChangeBookshelf, clearBookShelf } = this.props;
-
+const BookList = ({books, onChangeBookshelf, clearBookShelf}) => {
     return (
       <div className="list-books">
         <div className="list-books-title">
@@ -27,7 +19,6 @@ class BookList extends Component {
         </div>
       </div>
     )
-  }
-}
+};
 
 export default BookList;
