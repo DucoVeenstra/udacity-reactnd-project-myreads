@@ -235,3 +235,12 @@ body, .app {
 .hidden {
   display: none;
 }
+
+.checkmark {
+  position: absolute;
+  width:3px;
+  height:9px;
+  background-color:#dddccc;
+  left:11px;
+  top:6px;
+}

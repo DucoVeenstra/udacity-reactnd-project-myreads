@@ -8,25 +8,30 @@ class SearchPage extends Component {
 
   state = {
     query: '',
-    books: []
+    searchResults: []
   }
 
   updateQuery = (query) => {
     const {booksOnHomePage} = this.props;
+
     this.setState({ query: query });
+    
     if (query.length > 0) {
-      BooksAPI.search(query.trim()).then((booksInSearchResults) => {
-        booksInSearchResults.forEach(bookInSearchResults => {
-          booksOnHomePage.forEach(bookOnHomePage => {
-            if (bookInSearchResults.id === bookOnHomePage.id) {
-              bookInSearchResults.shelf = bookOnHomePage.shelf;
-            }
+      BooksAPI.search(query).then((booksInSearchResults) => {
+        if(booksInSearchResults.length > 0) {          
+          const results = booksInSearchResults.map((bookInSearchResults) => {
+            const existingBook = booksOnHomePage.find((b) => b.id === bookInSearchResults.id)
+            bookInSearchResults.shelf = !!existingBook ? existingBook.shelf : 'none'
+            return bookInSearchResults
           });
-        });
-        this.setState({ books: booksInSearchResults });
+          this.setState({ searchResults: results })
+          
+        } else {
+          this.setState({ searchResults: [] });
+        }
       })
     } else {
-      this.setState({ books: [] });
+      this.setState({ searchResults: [] });
     }
   }
 
@@ -47,10 +52,10 @@ class SearchPage extends Component {
               onChange={(event) => this.updateQuery(event.target.value)} />
           </div>
         </div>
-        {this.state.books && this.state.books.length > 0 ? (
+        {this.state.searchResults && this.state.searchResults.length > 0 ? (
           <div className="search-books-results">
             <ol className="books-grid"></ol>
-            <Bookshelf title={"Search Result"} books={this.state.books.filter(book => !book.shelf)} onChangeBookshelf={this.props.onChangeBookshelf} />
+            <Bookshelf title={"Search Result"} books={this.state.searchResults} onChangeBookshelf={this.props.onChangeBookshelf} />
           </div>
         ) : (null)}
       </div>
