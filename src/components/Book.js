@@ -24,20 +24,6 @@ class Book extends Component {
     return text;
   }
 
-  // Fix: When Searching on 'B' imageLinks is null on some books
-  getBookThumbnail(book) {
-    let urlThumbnail = "";
-    if (!book.imageLinks) {
-    } else {
-      if (!book.imageLinks.thumbnail) {
-      }
-      else {
-        urlThumbnail = book.imageLinks.thumbnail
-      }
-    }
-    return urlThumbnail;
-  }
-
   render() {
     const { onChangeBookshelf, book, bookshelf } = this.props;
     return (
