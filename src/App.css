@@ -236,11 +236,34 @@ body, .app {
   display: none;
 }
 
-.checkmark {
-  position: absolute;
-  width:3px;
-  height:9px;
-  background-color:#dddccc;
-  left:11px;
-  top:6px;
+.checkmarked {
+  display: block;  
+  background: white;
+  background-image: url('./icons/checkmark.svg');
+  background-repeat: no-repeat;
+  background-size: 24px;  
+}
+
+.book-shelf-options {
+  background-color: #60ac5d;
+  position: relative;
+  padding: 0;
+  margin-left: -120px;
+  top: 25px;
+  font-size: 0.8em;
+  height: 80px;
+  z-index: 1;
+}
+.book-shelf-options li {
+  padding: 0;
+  list-style: none;
+}
+
+.book-shelf-options li:hover {
+  background-color: #dedede;
+}
+
+.book-shelf-options li span {
+  padding: 0;
+  padding-left: 25px;
 }
