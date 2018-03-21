@@ -20,13 +20,6 @@ class BookshelfChanger extends Component {
         <li className={book.shelf === "read" ? "checkmarked": ""} onClick={() => onChangeBookshelf(book, 'read') && this.showOptions()}><span>Read</span></li>
         <li className={book.shelf === "none" ? "checkmarked": ""} onClick={() => onChangeBookshelf(book, 'none') && this.showOptions()}><span>None</span></li>
       </ul>
-        {/* <select value={book.shelf} onChange={(event) => onChangeBookshelf(book, event.target.value)}>
-          <option value="moveTo" disabled>Move to...</option>
-          <option value="currentlyReading" >Currently Reading</option>
-          <option value="wantToRead">Want to Read</option>
-          <option value="read">Read</option>
-          <option value="none">None</option>
-        </select> */}
       </div>
     )
   }
