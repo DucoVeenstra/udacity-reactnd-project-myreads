@@ -19,7 +19,6 @@ class SearchPage extends Component {
       BooksAPI.search(query).then((booksInSearchResults) => {
         //If no errors found, loop over the results
         if (_.isNil(booksInSearchResults.error)) {
-          console.log(booksInSearchResults.error)
           if(booksInSearchResults.length > 0) {
             this.setState({ searchResults: booksInSearchResults })
           } else {
