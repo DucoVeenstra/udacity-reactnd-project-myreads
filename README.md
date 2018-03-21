@@ -67,6 +67,7 @@ You will also see any lint errors in the console.
 ## Build With
 
 * This app was build with:
+  - lodash
   - react
   - react-dom
   - react-router-dom

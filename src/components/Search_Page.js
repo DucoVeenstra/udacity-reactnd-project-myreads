@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import _ from 'lodash';
 
 import Bookshelf from '../components/Bookshelf';
 import * as BooksAPI from '../api/BooksAPI';
@@ -16,8 +17,14 @@ class SearchPage extends Component {
     
     if (query.length > 0) {
       BooksAPI.search(query).then((booksInSearchResults) => {
-        if(booksInSearchResults.length > 0) {
-          this.setState({ searchResults: booksInSearchResults })
+        //If no errors found, loop over the results
+        if (_.isNil(booksInSearchResults.error)) {
+          console.log(booksInSearchResults.error)
+          if(booksInSearchResults.length > 0) {
+            this.setState({ searchResults: booksInSearchResults })
+          } else {
+            this.setState({ searchResults: [] });
+          }
         } else {
           this.setState({ searchResults: [] });
         }
